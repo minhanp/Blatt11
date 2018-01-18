@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A070920B2010DD74006BC763 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = A07091FA2010DD72006BC763 /* Makefile */; };
 		A08857712010AD9E00B97807 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = A08857702010AD9E00B97807 /* main.c */; };
 		A08857792010AE4500B97807 /* tetris.c in Sources */ = {isa = PBXBuildFile; fileRef = A08857782010AE4500B97807 /* tetris.c */; };
 		A088577C2010AEDD00B97807 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A088577B2010AEDD00B97807 /* SDL2.framework */; };
@@ -27,6 +28,23 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A07091FA2010DD72006BC763 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; name = Makefile; path = ../../TetrisGame/src/Makefile; sourceTree = "<group>"; };
+		A07091FB2010DD72006BC763 /* SDL2_mixer.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = SDL2_mixer.dll; path = ../../TetrisGame/src/SDL2_mixer.dll; sourceTree = "<group>"; };
+		A07091FC2010DD72006BC763 /* SDL */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SDL; path = ../../TetrisGame/src/SDL; sourceTree = "<group>"; };
+		A07091FD2010DD72006BC763 /* libogg-0.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libogg-0.dll"; path = "../../TetrisGame/src/libogg-0.dll"; sourceTree = "<group>"; };
+		A07091FE2010DD72006BC763 /* libmodplug-1.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libmodplug-1.dll"; path = "../../TetrisGame/src/libmodplug-1.dll"; sourceTree = "<group>"; };
+		A07091FF2010DD72006BC763 /* libmpg123-0.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libmpg123-0.dll"; path = "../../TetrisGame/src/libmpg123-0.dll"; sourceTree = "<group>"; };
+		A07092002010DD72006BC763 /* zlib1.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = zlib1.dll; path = ../../TetrisGame/src/zlib1.dll; sourceTree = "<group>"; };
+		A07092012010DD73006BC763 /* libwebp-7.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libwebp-7.dll"; path = "../../TetrisGame/src/libwebp-7.dll"; sourceTree = "<group>"; };
+		A07092022010DD73006BC763 /* libtiff-5.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libtiff-5.dll"; path = "../../TetrisGame/src/libtiff-5.dll"; sourceTree = "<group>"; };
+		A07092032010DD73006BC763 /* libjpeg-9.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libjpeg-9.dll"; path = "../../TetrisGame/src/libjpeg-9.dll"; sourceTree = "<group>"; };
+		A07092042010DD73006BC763 /* libFLAC-8.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libFLAC-8.dll"; path = "../../TetrisGame/src/libFLAC-8.dll"; sourceTree = "<group>"; };
+		A07092052010DD73006BC763 /* T.exe */ = {isa = PBXFileReference; lastKnownFileType = file; name = T.exe; path = ../../TetrisGame/src/T.exe; sourceTree = "<group>"; };
+		A07092062010DD73006BC763 /* libpng16-16.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libpng16-16.dll"; path = "../../TetrisGame/src/libpng16-16.dll"; sourceTree = "<group>"; };
+		A07092072010DD73006BC763 /* SDL2_image.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = SDL2_image.dll; path = ../../TetrisGame/src/SDL2_image.dll; sourceTree = "<group>"; };
+		A07092082010DD73006BC763 /* SDL2.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = SDL2.dll; path = ../../TetrisGame/src/SDL2.dll; sourceTree = "<group>"; };
+		A07092092010DD73006BC763 /* libvorbisfile-3.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libvorbisfile-3.dll"; path = "../../TetrisGame/src/libvorbisfile-3.dll"; sourceTree = "<group>"; };
+		A070920A2010DD74006BC763 /* libvorbis-0.dll */ = {isa = PBXFileReference; lastKnownFileType = file; name = "libvorbis-0.dll"; path = "../../TetrisGame/src/libvorbis-0.dll"; sourceTree = "<group>"; };
 		A088576D2010AD9E00B97807 /* Blatt11 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Blatt11; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08857702010AD9E00B97807 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		A08857772010AE4500B97807 /* tetris.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tetris.h; sourceTree = "<group>"; };
@@ -73,6 +91,23 @@
 				A08857782010AE4500B97807 /* tetris.c */,
 				A08857772010AE4500B97807 /* tetris.h */,
 				A08857702010AD9E00B97807 /* main.c */,
+				A07092042010DD73006BC763 /* libFLAC-8.dll */,
+				A07092032010DD73006BC763 /* libjpeg-9.dll */,
+				A07091FE2010DD72006BC763 /* libmodplug-1.dll */,
+				A07091FF2010DD72006BC763 /* libmpg123-0.dll */,
+				A07091FD2010DD72006BC763 /* libogg-0.dll */,
+				A07092062010DD73006BC763 /* libpng16-16.dll */,
+				A07092022010DD73006BC763 /* libtiff-5.dll */,
+				A070920A2010DD74006BC763 /* libvorbis-0.dll */,
+				A07092092010DD73006BC763 /* libvorbisfile-3.dll */,
+				A07092012010DD73006BC763 /* libwebp-7.dll */,
+				A07091FA2010DD72006BC763 /* Makefile */,
+				A07091FC2010DD72006BC763 /* SDL */,
+				A07092072010DD73006BC763 /* SDL2_image.dll */,
+				A07091FB2010DD72006BC763 /* SDL2_mixer.dll */,
+				A07092082010DD73006BC763 /* SDL2.dll */,
+				A07092052010DD73006BC763 /* T.exe */,
+				A07092002010DD72006BC763 /* zlib1.dll */,
 			);
 			path = Blatt11;
 			sourceTree = "<group>";
@@ -144,6 +179,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A070920B2010DD74006BC763 /* Makefile in Sources */,
 				A08857792010AE4500B97807 /* tetris.c in Sources */,
 				A08857712010AD9E00B97807 /* main.c in Sources */,
 			);
