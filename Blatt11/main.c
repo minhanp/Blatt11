@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 	int* pLinesNeeded = LinesNeeded;
 	for (int i = 0; i < STARTLEVEL; i++, pLinesNeeded++);
 	fprintf(print, "pLinesNeeded: %d\n", *pLinesNeeded);
-	
+	/*
 	int *GravityArray = (int*) malloc(40*sizeof(int));
 	for (int i = 0, k = 48; i < 9; k -= 5)
 	{
@@ -107,6 +107,7 @@ int main(int argc, char *argv[])
 	}
 	int* pGravityArray = GravityArray;
 	for (int i = 0; i < STARTLEVEL; i++, pGravityArray++);
+	*/
 	
 	int renderMap[game.rows][game.columns];
 	// int showNextBlock[4][4];
@@ -300,7 +301,8 @@ int main(int argc, char *argv[])
 	int timer = 0;
 	int tempTimer = 0;
 	int Framecounter = 0;
-	int levelCheck = STARTLEVEL;
+	// int levelCheck = STARTLEVEL;
+	
 	scoreAusgabe.Stelle_1 = 0;	
 	scoreAusgabe.Stelle_2 = 0;
 	scoreAusgabe.Stelle_3 = 0;
@@ -382,19 +384,20 @@ int main(int argc, char *argv[])
 			tetrisApplyGravity(pointGame);
 		}
 
-
+		
 		/* Gravity */
+		/*
 		if (levelCheck != game.level)
 		{
 			pGravityArray++;
 		}
-		
+		levelCheck = game.level;
 		if (Framecounter == (*pGravityArray))
 		{
 			tetrisApplyGravity(pointGame);
 			Framecounter = 0;
 		}
-
+		*/
 
 		// Leere das Fenster
 		SDL_RenderClear(rend);
@@ -1060,8 +1063,10 @@ int main(int argc, char *argv[])
 	SDL_DestroyWindow(win);
 	SDL_Quit();
 	free(LinesNeeded);
+	/*
 	free(GravityArray);
-	fclose(print);
+	*/
+	close(print);
 	fclose(Scoreboard);
 	
 	return 0;
