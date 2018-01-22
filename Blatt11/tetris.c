@@ -43,7 +43,7 @@ position blockTypes[7][4][4] = {
 void tetrisGetNextBlock (tetrisGame *game){
 	block nextBlock;
 	nextBlock.type = rand() % 7;
-	nextBlock.orientation = 0;
+	nextBlock.orientation = 1;
 	position posi;
 	posi.x = (game->columns)/2;
 	posi.y = 0;
