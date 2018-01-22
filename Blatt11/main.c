@@ -934,13 +934,13 @@ int main(int argc, char *argv[])
 							RBlockJ.y = y * PpB + 3*PpB;
 								SDL_RenderCopy(rend, texBlockJ, NULL, &RBlockJ);
 							break;
-					case 4: RBlockS.x = x * PpB + (RESOLUTION_WIDTH/2) - 5*PpB;
-							RBlockS.y = y * PpB + 3*PpB;
-								SDL_RenderCopy(rend, texBlockS, NULL, &RBlockS);
-							break;
-					case 5: RBlockO.x = x * PpB + (RESOLUTION_WIDTH/2) - 5*PpB;
+					case 4: RBlockO.x = x * PpB + (RESOLUTION_WIDTH/2) - 5*PpB;
 							RBlockO.y = y * PpB + 3*PpB;
 								SDL_RenderCopy(rend, texBlockO, NULL, &RBlockO);
+							break;
+					case 5: RBlockS.x = x * PpB + (RESOLUTION_WIDTH/2) - 5*PpB;
+							RBlockS.y = y * PpB + 3*PpB;
+								SDL_RenderCopy(rend, texBlockS, NULL, &RBlockS);
 							break;
 					case 6: RBlockT.x = x * PpB + (RESOLUTION_WIDTH/2) - 5*PpB;
 							RBlockT.y = y * PpB + 3*PpB;
