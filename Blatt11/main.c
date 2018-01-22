@@ -286,10 +286,11 @@ int main(int argc, char *argv[])
 	*/
 	
 	game.running = true;
-
+    int z = game.level;
 	/* Animation */
 	while (game.running)
 	{
+        
 		SDL_Event event;
 		while (SDL_PollEvent(&event))
 		{
@@ -974,7 +975,23 @@ int main(int argc, char *argv[])
 		}
 		
 		Gravity+= 2*(game.level + 1);
-		
+        /* Musik depending on level*/
+        if(game.level!=z){
+            switch(game.level){
+                case 1: Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
+                        Mix_Music* BackgroundMusic = Mix_LoadMUS("music/SuperMarioLand.mp3");
+                        Mix_PlayMusic(BackgroundMusic, -1);
+                        z=game.level;
+                        break;
+                case 2: Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
+                        Mix_Music* BackgroundMusic2 = Mix_LoadMUS("music/BackgroundMusic1.mp3");
+                        Mix_PlayMusic(BackgroundMusic2, -1);
+                        z=game.level;
+                        break;
+                
+            }
+        }
+            /*Musik depending on level ende*/
 		SDL_RenderPresent(rend);
 
 
