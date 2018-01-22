@@ -93,3 +93,6 @@ Score: 0, reachedLevel: 0, while surviving for 10 seconds.
 Score: 0, reachedLevel: 0, while surviving for 5 seconds.
 Score: 0, reachedLevel: 0, while surviving for 12 seconds.
 Score: 0, reachedLevel: 0, while surviving for 6 seconds.
+Score: 3600, reachedLevel: 1, while surviving for 158 seconds.
+Score: 0, reachedLevel: 0, while surviving for 2 seconds.
+Score: 0, reachedLevel: 0, while surviving for 3 seconds.
