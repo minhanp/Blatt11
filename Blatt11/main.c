@@ -24,6 +24,7 @@
 #define FPS 60
 #define STARTLEVEL 0
 #define MAXLEVEL 20
+#define DIFFICULTY 1
 
 
 typedef struct 
@@ -78,9 +79,10 @@ int main(int argc, char *argv[])
 	int* pLinesNeeded = LinesNeeded;
 	for (int i = 0; i < STARTLEVEL; i++, pLinesNeeded++);
 	fprintf(print, "pLinesNeeded: %d\n", *pLinesNeeded);
-	/*
+	
 	int *GravityArray = (int*) malloc(40*sizeof(int));
-	for (int i = 0, k = 48; i < 9; k -= 5)
+	
+	for (int i = 0, k = 48; i < 9; i++, k -= 5)
 	{
 		GravityArray[i] = k;  // 0-8 filled
 	}
@@ -107,7 +109,6 @@ int main(int argc, char *argv[])
 	}
 	int* pGravityArray = GravityArray;
 	for (int i = 0; i < STARTLEVEL; i++, pGravityArray++);
-	*/
 	
 	int renderMap[game.rows][game.columns];
 	// int showNextBlock[4][4];
@@ -294,14 +295,13 @@ int main(int argc, char *argv[])
 
 	// Bewegungsrichtungen
 	int down = 0;
-	int Gravity = 0;
 	int oldlines = 0;
 	int maxlevel = MAXLEVEL;
 	int oldscore = 0;
 	int timer = 0;
 	int tempTimer = 0;
 	int Framecounter = 0;
-	// int levelCheck = STARTLEVEL;
+	int levelCheck = STARTLEVEL;
 	
 	scoreAusgabe.Stelle_1 = 0;	
 	scoreAusgabe.Stelle_2 = 0;
@@ -386,7 +386,6 @@ int main(int argc, char *argv[])
 
 		
 		/* Gravity */
-		/*
 		if (levelCheck != game.level)
 		{
 			pGravityArray++;
@@ -397,7 +396,6 @@ int main(int argc, char *argv[])
 			tetrisApplyGravity(pointGame);
 			Framecounter = 0;
 		}
-		*/
 
 		// Leere das Fenster
 		SDL_RenderClear(rend);
@@ -1014,8 +1012,7 @@ int main(int argc, char *argv[])
 			tempTimer -= FPS;
 		}
 		
-		// Gravity+= 2*(game.level + 1);
-		Framecounter += 1;
+		Framecounter += DIFFICULTY;
         /* Musik depending on level*/
         if(game.level!=z){
             switch(game.level){
@@ -1063,10 +1060,8 @@ int main(int argc, char *argv[])
 	SDL_DestroyWindow(win);
 	SDL_Quit();
 	free(LinesNeeded);
-	/*
 	free(GravityArray);
-	*/
-	close(print);
+	fclose(print);
 	fclose(Scoreboard);
 	
 	return 0;
