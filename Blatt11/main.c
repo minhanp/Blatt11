@@ -26,7 +26,9 @@
 #define MAXLEVEL 20
 #define DIFFICULTY 1
 
-
+void renderNumbers(int, int, int, float, SDL_Rect, SDL_Rect, SDL_Rect, SDL_Rect, SDL_Rect, SDL_Rect, SDL_Rect, SDL_Rect, SDL_Rect, SDL_Renderer*,  
+					SDL_Texture*, SDL_Texture*, SDL_Texture*, SDL_Texture*, SDL_Texture*, SDL_Texture*, SDL_Texture*, SDL_Texture*, SDL_Texture*);
+	
 typedef struct 
 {
 	int Stelle_1;
@@ -172,7 +174,6 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
-
 	SDL_Surface* BlockI = IMG_Load("textures/TexBlockI.png");
 	SDL_Surface* BlockL = IMG_Load("textures/TexBlockL.png");
 	SDL_Surface* BlockJ = IMG_Load("textures/TexBlockJ.png");
@@ -181,6 +182,9 @@ int main(int argc, char *argv[])
 	SDL_Surface* BlockT = IMG_Load("textures/TexBlockT.png");
 	SDL_Surface* BlockZ = IMG_Load("textures/TexBlockZ.png");
 	SDL_Surface* Num0 = IMG_Load("textures/Tex0.png");
+	
+	// sprintf(buf, "textures/Tex%d.png", i)
+	
 	SDL_Surface* Num1 = IMG_Load("textures/Tex1.png");
 	SDL_Surface* Num2 = IMG_Load("textures/Tex2.png");
 	SDL_Surface* Num3 = IMG_Load("textures/Tex3.png");
@@ -192,9 +196,19 @@ int main(int argc, char *argv[])
 	SDL_Surface* Num9 = IMG_Load("textures/Tex9.png");
 	SDL_Surface* Edges = IMG_Load("textures/Edges.png");
 	SDL_Surface* BackgroundImage = IMG_Load("textures/Background.jpg");
-
-
-
+	/*
+	SDL_Texture* numbertex[10];
+	
+	for(int i=0; i<10; i++) {
+		char buf[100];
+		sprintf(buf, "textures/Tex%d.png", i);
+		temp = IMG_Load(buf);
+		numbertex[i] = SDL_CreateTextureFromSurface(rend, temp);
+		SDL_FreeSurface(temp);
+	}
+	
+	numbertex[zahl]
+	*/
 	if (!(BlockI || BlockL || BlockJ || BlockO || BlockS || BlockT || BlockZ || Edges || BackgroundImage))
 	{
 		printf("Fehler beim Initialisieren von mindestens einer der Oberflaechen: %s\n", SDL_GetError());
@@ -203,6 +217,9 @@ int main(int argc, char *argv[])
 		SDL_Quit();
 		return 1;
 	}
+	
+	//for(int i=0, i<10; i++)
+	//	SDL_FreeTexture(numbertex[i]);
 
 	SDL_Texture* texBlockI = SDL_CreateTextureFromSurface(rend, BlockI);
 	SDL_Texture* texBlockL = SDL_CreateTextureFromSurface(rend, BlockL);
@@ -981,9 +998,12 @@ int main(int argc, char *argv[])
 				SDL_RenderCopy(rend, texNum3, NULL, &RNum3);
 				break;
 			case 4: 
+				/*
 				RNum4.x = 3.5 * PpB + (3*RESOLUTION_WIDTH/4) - 4*PpB;
 				RNum4.y = 5 * PpB + 3*PpB;
 				SDL_RenderCopy(rend, texNum4, NULL, &RNum4);
+				*/
+				renderNumbers( 4, 4, 0, PpB, RNum1, RNum2, RNum3, RNum4, RNum5, RNum6, RNum7, RNum8, RNum9, rend, texNum1, texNum2, texNum3, texNum4, texNum5, texNum6, texNum7, texNum8, texNum9);
 				break;
 			case 5: 
 				RNum5.x = 3.5 * PpB + (3*RESOLUTION_WIDTH/4) - 4*PpB;
@@ -1030,7 +1050,7 @@ int main(int argc, char *argv[])
 				RNum3.y = 5 * PpB + 3*PpB;
 				SDL_RenderCopy(rend, texNum3, NULL, &RNum3);
 				break;
-			case 4: 
+			case 4:
 				RNum4.x = 4.5 * PpB + (3*RESOLUTION_WIDTH/4) - 4*PpB;
 				RNum4.y = 5 * PpB + 3*PpB;
 				SDL_RenderCopy(rend, texNum4, NULL, &RNum4);
@@ -1257,7 +1277,6 @@ int main(int argc, char *argv[])
 
 
 
-
 	} /* Animation Ende */
 
 	/* Score Documentation */
@@ -1284,4 +1303,72 @@ int main(int argc, char *argv[])
 	fclose(Scoreboard);
 	
 	return 0;
+}
+
+/* renderNumbers(int zahl, int x_offset, int y_offset, PpB, RNum1, RNum2, RNum3, RNum4, RNum5, RNum6, RNum7, RNum8, RNum9, rend, texNum1, texNum2, texNum3, texNum4, texNum5, texNum6, 
+					texNum7, texNum8, texNum9);
+*/				
+void renderNumbers(int zahl, int x_offset, int y_offset, float PpB, SDL_Rect RNum1, SDL_Rect RNum2, SDL_Rect RNum3, SDL_Rect RNum4, SDL_Rect RNum5, SDL_Rect RNum6, 
+					SDL_Rect RNum7, SDL_Rect RNum8, SDL_Rect RNum9, SDL_Renderer* rend, SDL_Texture* texNum1, SDL_Texture* texNum2, SDL_Texture* texNum3, 
+					SDL_Texture* texNum4, SDL_Texture* texNum5, SDL_Texture* texNum6, SDL_Texture* texNum7, SDL_Texture* texNum8, SDL_Texture* texNum9)
+{
+	
+	SDL_Rect newrect;
+	newrect.x = x_offset * PpB;
+	newrect.y = y_offset * PpB;
+	newrect.w = PpB;
+	newrect.h = PpB;
+	
+	SDL_RenderCopy(rend, texNum4, NULL, &newrect);
+	
+	switch(zahl)
+	{
+	case 1:
+		RNum1.x = (3*RESOLUTION_WIDTH/4) -4.5*PpB + x_offset*PpB;
+		RNum1.y = 8*PpB + y_offset;
+		SDL_RenderCopy(rend, texNum1, NULL, &RNum1);
+		break;
+	case 2:
+		RNum2.x = (3*RESOLUTION_WIDTH/4) -4.5*PpB + x_offset*PpB;
+		RNum2.y = 8*PpB + y_offset;
+		SDL_RenderCopy(rend, texNum2, NULL, &RNum2);
+		break;
+	case 3:
+		RNum3.x = (3*RESOLUTION_WIDTH/4) -4.5*PpB + x_offset*PpB;
+		RNum3.y = 8*PpB + y_offset;
+		SDL_RenderCopy(rend, texNum3, NULL, &RNum3);
+		break;
+	case 4:
+		RNum4.x = (3*RESOLUTION_WIDTH/4) -4.5*PpB + x_offset*PpB;
+		RNum4.y = 8*PpB + y_offset;
+		SDL_RenderCopy(rend, texNum4, NULL, &RNum4);
+		break;
+	case 5:
+		RNum5.x = (3*RESOLUTION_WIDTH/4) -4.5*PpB + x_offset*PpB;
+		RNum5.y = 8*PpB + y_offset;
+		SDL_RenderCopy(rend, texNum5, NULL, &RNum5);
+		break;
+	case 6:
+		RNum6.x = (3*RESOLUTION_WIDTH/4) -4.5*PpB + x_offset*PpB;
+		RNum6.y = 8*PpB + y_offset;
+		SDL_RenderCopy(rend, texNum6, NULL, &RNum6);
+		break;
+	case 7:
+		RNum7.x = (3*RESOLUTION_WIDTH/4) -4.5*PpB + x_offset*PpB;
+		RNum7.y = 8*PpB + y_offset;
+		SDL_RenderCopy(rend, texNum7, NULL, &RNum7);
+		break;
+	case 8:
+		RNum8.x = (3*RESOLUTION_WIDTH/4) -4.5*PpB + x_offset*PpB;
+		RNum8.y = 8*PpB + y_offset;
+		SDL_RenderCopy(rend, texNum8, NULL, &RNum8);
+		break;
+	case 9:
+		RNum9.x = (3*RESOLUTION_WIDTH/4) -4.5*PpB + x_offset*PpB;
+		RNum9.y = 8*PpB + y_offset;
+		SDL_RenderCopy(rend, texNum9, NULL, &RNum9);
+		break;
+	default: 
+		break;
+	}
 }
