@@ -26,7 +26,7 @@
 #define MAXLEVEL 20
 #define DIFFICULTY 1
 
-void renderNumbers(int, int, int, float, SDL_Renderer*, SDL_Texture*[]);
+void renderNumbers(int, float, float, float, SDL_Renderer*, SDL_Texture*[]);
 	
 typedef struct 
 {
@@ -478,34 +478,34 @@ int main(int argc, char *argv[])
 			switch (linesAusgabe.Stelle_1)
 			{
 				case 0:
-					renderNumbers(0, 0, 2, PpB, rend, texNum);
+					renderNumbers(0, 29.7, 10, PpB, rend, texNum);
 					break;
 				case 1: 
-					renderNumbers(1, 0, 2, PpB, rend, texNum);
+					renderNumbers(1, 29.7, 10, PpB, rend, texNum);
 					break;
 				case 2:
-					renderNumbers(2, 0, 2, PpB, rend, texNum);
+					renderNumbers(2, 29.7, 10, PpB, rend, texNum);
 					break;
 				case 3:
-					renderNumbers(3, 0, 2, PpB, rend, texNum);
+					renderNumbers(3, 29.7, 10, PpB, rend, texNum);
 					break;
 				case 4:
-					renderNumbers(4, 0, 2, PpB, rend, texNum);
+					renderNumbers(4, 29.7, 10, PpB, rend, texNum);
 					break;
 				case 5:
-					renderNumbers(5, 0, 2, PpB, rend, texNum);
+					renderNumbers(5, 29.7, 10, PpB, rend, texNum);
 					break;
 				case 6:
-					renderNumbers(6, 0, 2, PpB, rend, texNum);
+					renderNumbers(6, 29.7, 10, PpB, rend, texNum);
 					break;
 				case 7:
-					renderNumbers(7, 0, 2, PpB, rend, texNum);
+					renderNumbers(7, 29.7, 10, PpB, rend, texNum);
 					break;
 				case 8:
-					renderNumbers(8, 0, 2, PpB, rend, texNum);
+					renderNumbers(8, 29.7, 10, PpB, rend, texNum);
 					break;
 				case 9:
-					renderNumbers(9, 0, 2, PpB, rend, texNum);
+					renderNumbers(9, 29.7, 10, PpB, rend, texNum);
 					break;
 				default:
 					break;
@@ -514,34 +514,34 @@ int main(int argc, char *argv[])
 			switch (linesAusgabe.Stelle_2)
 			{
 				case 0:
-					renderNumbers(0, 1, 2, PpB, rend, texNum);
+					renderNumbers(0, 30.7, 10, PpB, rend, texNum);
 					break;
 				case 1: 
-					renderNumbers(1, 1, 2, PpB, rend, texNum);
+					renderNumbers(1, 30.7, 10, PpB, rend, texNum);
 					break;
 				case 2:
-					renderNumbers(2, 1, 2, PpB, rend, texNum);
+					renderNumbers(2, 30.7, 10, PpB, rend, texNum);
 					break;
 				case 3:
-					renderNumbers(3, 1, 2, PpB, rend, texNum);
+					renderNumbers(3, 30.7, 10, PpB, rend, texNum);
 					break;
 				case 4:
-					renderNumbers(4, 1, 2, PpB, rend, texNum);
+					renderNumbers(4, 30.7, 10, PpB, rend, texNum);
 					break;
 				case 5:
-					renderNumbers(5, 1, 2, PpB, rend, texNum);
+					renderNumbers(5, 30.7, 10, PpB, rend, texNum);
 					break;
 				case 6:
-					renderNumbers(6, 1, 2, PpB, rend, texNum);
+					renderNumbers(6, 30.7, 10, PpB, rend, texNum);
 					break;
 				case 7:
-					renderNumbers(7, 1, 2, PpB, rend, texNum);
+					renderNumbers(7, 30.7, 10, PpB, rend, texNum);
 					break;
 				case 8:
-					renderNumbers(8, 1, 2, PpB, rend, texNum);
+					renderNumbers(8, 30.7, 10, PpB, rend, texNum);
 					break;
 				case 9:
-					renderNumbers(9, 1, 2, PpB, rend, texNum);
+					renderNumbers(9, 30.7, 10, PpB, rend, texNum);
 					break;
 				default:
 					break;
@@ -550,34 +550,34 @@ int main(int argc, char *argv[])
 			switch (linesAusgabe.Stelle_3)
 			{
 				case 0:
-					renderNumbers(0, 2, 2, PpB, rend, texNum);
+					renderNumbers(0, 31.7, 10, PpB, rend, texNum);
 					break;
 				case 1: 
-					renderNumbers(1, 2, 2, PpB, rend, texNum);
+					renderNumbers(1, 31.7, 10, PpB, rend, texNum);
 					break;
 				case 2:
-					renderNumbers(2, 2, 2, PpB, rend, texNum);
+					renderNumbers(2, 31.7, 10, PpB, rend, texNum);
 					break;
 				case 3:
-					renderNumbers(3, 2, 2, PpB, rend, texNum);
+					renderNumbers(3, 31.7, 10, PpB, rend, texNum);
 					break;
 				case 4:
-					renderNumbers(4, 2, 2, PpB, rend, texNum);
+					renderNumbers(4, 31.7, 10, PpB, rend, texNum);
 					break;
 				case 5:
-					renderNumbers(5, 2, 2, PpB, rend, texNum);
+					renderNumbers(5, 31.7, 10, PpB, rend, texNum);
 					break;
 				case 6:
-					renderNumbers(6, 2, 2, PpB, rend, texNum);
+					renderNumbers(6, 31.7, 10, PpB, rend, texNum);
 					break;
 				case 7:
-					renderNumbers(7, 2, 2, PpB, rend, texNum);
+					renderNumbers(7, 31.7, 10, PpB, rend, texNum);
 					break;
 				case 8:
-					renderNumbers(8, 2, 2, PpB, rend, texNum);
+					renderNumbers(8, 31.7, 10, PpB, rend, texNum);
 					break;
 				case 9:
-					renderNumbers(9, 2, 2, PpB, rend, texNum);
+					renderNumbers(9, 31.7, 10, PpB, rend, texNum);
 					break;
 				default:
 					break;
@@ -639,34 +639,34 @@ int main(int argc, char *argv[])
 		switch (scoreAusgabe.Stelle_1)
 		{
 			case 0:
-				renderNumbers(0, 0, 0, PpB, rend, texNum);
+				renderNumbers(0, 29.7, 8, PpB, rend, texNum);
 				break;
 			case 1: 
-				renderNumbers(1, 0, 0, PpB, rend, texNum);
+				renderNumbers(1, 29.7, 8, PpB, rend, texNum);
 				break;
 			case 2:
-				renderNumbers(2, 0, 0, PpB, rend, texNum);
+				renderNumbers(2, 29.7, 8, PpB, rend, texNum);
 				break;
 			case 3:
-				renderNumbers(3, 0, 0, PpB, rend, texNum);
+				renderNumbers(3, 29.7, 8, PpB, rend, texNum);
 				break;
 			case 4:
-				renderNumbers(4, 0, 0, PpB, rend, texNum);
+				renderNumbers(4, 29.7, 8, PpB, rend, texNum);
 				break;
 			case 5:
-				renderNumbers(5, 0, 0, PpB, rend, texNum);
+				renderNumbers(5, 29.7, 8, PpB, rend, texNum);
 				break;
 			case 6:
-				renderNumbers(6, 0, 0, PpB, rend, texNum);
+				renderNumbers(6, 29.7, 8, PpB, rend, texNum);
 				break;
 			case 7:
-				renderNumbers(7, 0, 0, PpB, rend, texNum);
+				renderNumbers(7, 29.7, 8, PpB, rend, texNum);
 				break;
 			case 8:
-				renderNumbers(8, 0, 0, PpB, rend, texNum);
+				renderNumbers(8, 29.7, 8, PpB, rend, texNum);
 				break;
 			case 9:
-				renderNumbers(9, 0, 0, PpB, rend, texNum);
+				renderNumbers(9, 29.7, 8, PpB, rend, texNum);
 				break;
 			default:
 				break;
@@ -674,34 +674,34 @@ int main(int argc, char *argv[])
 		switch (scoreAusgabe.Stelle_2)
 		{
 			case 0:
-				renderNumbers(0, 1, 0, PpB, rend, texNum);
+				renderNumbers(0, 30.7, 8, PpB, rend, texNum);
 				break;
 			case 1: 
-				renderNumbers(1, 1, 0, PpB, rend, texNum);
+				renderNumbers(1, 30.7, 8, PpB, rend, texNum);
 				break;
 			case 2:
-				renderNumbers(2, 1, 0, PpB, rend, texNum);
+				renderNumbers(2, 30.7, 8, PpB, rend, texNum);
 				break;
 			case 3:
-				renderNumbers(3, 1, 0, PpB, rend, texNum);
+				renderNumbers(3, 30.7, 8, PpB, rend, texNum);
 				break;
 			case 4:
-				renderNumbers(4, 1, 0, PpB, rend, texNum);
+				renderNumbers(4, 30.7, 8, PpB, rend, texNum);
 				break;
 			case 5:
-				renderNumbers(5, 1, 0, PpB, rend, texNum);
+				renderNumbers(5, 30.7, 8, PpB, rend, texNum);
 				break;
 			case 6:
-				renderNumbers(6, 1, 0, PpB, rend, texNum);
+				renderNumbers(6, 30.7, 8, PpB, rend, texNum);
 				break;
 			case 7:
-				renderNumbers(7, 1, 0, PpB, rend, texNum);
+				renderNumbers(7, 30.7, 8, PpB, rend, texNum);
 				break;
 			case 8:
-				renderNumbers(8, 1, 0, PpB, rend, texNum);
+				renderNumbers(8, 30.7, 8, PpB, rend, texNum);
 				break;
 			case 9:
-				renderNumbers(9, 1, 0, PpB, rend, texNum);
+				renderNumbers(9, 30.7, 8, PpB, rend, texNum);
 				break;
 			default:
 				break;
@@ -709,34 +709,34 @@ int main(int argc, char *argv[])
 		switch (scoreAusgabe.Stelle_3)
 		{
 			case 0:
-				renderNumbers(0, 2, 0, PpB, rend, texNum);
+				renderNumbers(0, 31.7, 8, PpB, rend, texNum);
 				break;
 			case 1: 
-				renderNumbers(1, 2, 0, PpB, rend, texNum);
+				renderNumbers(1, 31.7, 8, PpB, rend, texNum);
 				break;
 			case 2:
-				renderNumbers(2, 2, 0, PpB, rend, texNum);
+				renderNumbers(2, 31.7, 8, PpB, rend, texNum);
 				break;
 			case 3:
-				renderNumbers(3, 2, 0, PpB, rend, texNum);
+				renderNumbers(3, 31.7, 8, PpB, rend, texNum);
 				break;
 			case 4:
-				renderNumbers(4, 2, 0, PpB, rend, texNum);
+				renderNumbers(4, 31.7, 8, PpB, rend, texNum);
 				break;
 			case 5:
-				renderNumbers(5, 2, 0, PpB, rend, texNum);
+				renderNumbers(5, 31.7, 8, PpB, rend, texNum);
 				break;
 			case 6:
-				renderNumbers(6, 2, 0, PpB, rend, texNum);
+				renderNumbers(6, 31.7, 8, PpB, rend, texNum);
 				break;
 			case 7:
-				renderNumbers(7, 2, 0, PpB, rend, texNum);
+				renderNumbers(7, 31.7, 8, PpB, rend, texNum);
 				break;
 			case 8:
-				renderNumbers(8, 2, 0, PpB, rend, texNum);
+				renderNumbers(8, 31.7, 8, PpB, rend, texNum);
 				break;
 			case 9:
-				renderNumbers(9, 2, 0, PpB, rend, texNum);
+				renderNumbers(9, 31.7, 8, PpB, rend, texNum);
 				break;
 			default:
 				break;
@@ -744,34 +744,34 @@ int main(int argc, char *argv[])
 		switch (scoreAusgabe.Stelle_4)
 		{
 			case 0:
-				renderNumbers(0, 3, 0, PpB, rend, texNum);
+				renderNumbers(0, 32.7, 8, PpB, rend, texNum);
 				break;
 			case 1: 
-				renderNumbers(1, 3, 0, PpB, rend, texNum);
+				renderNumbers(1, 32.7, 8, PpB, rend, texNum);
 				break;
 			case 2:
-				renderNumbers(2, 3, 0, PpB, rend, texNum);
+				renderNumbers(2, 32.7, 8, PpB, rend, texNum);
 				break;
 			case 3:
-				renderNumbers(3, 3, 0, PpB, rend, texNum);
+				renderNumbers(3, 32.7, 8, PpB, rend, texNum);
 				break;
 			case 4:
-				renderNumbers(4, 3, 0, PpB, rend, texNum);
+				renderNumbers(4, 32.7, 8, PpB, rend, texNum);
 				break;
 			case 5:
-				renderNumbers(5, 3, 0, PpB, rend, texNum);
+				renderNumbers(5, 32.7, 8, PpB, rend, texNum);
 				break;
 			case 6:
-				renderNumbers(6, 3, 0, PpB, rend, texNum);
+				renderNumbers(6, 32.7, 8, PpB, rend, texNum);
 				break;
 			case 7:
-				renderNumbers(7, 3, 0, PpB, rend, texNum);
+				renderNumbers(7, 32.7, 8, PpB, rend, texNum);
 				break;
 			case 8:
-				renderNumbers(8, 3, 0, PpB, rend, texNum);
+				renderNumbers(8, 32.7, 8, PpB, rend, texNum);
 				break;
 			case 9:
-				renderNumbers(9, 3, 0, PpB, rend, texNum);
+				renderNumbers(9, 32.7, 8, PpB, rend, texNum);
 				break;
 			default:
 				break;
@@ -779,34 +779,34 @@ int main(int argc, char *argv[])
 		switch (scoreAusgabe.Stelle_5)
 		{
 			case 0:
-				renderNumbers(0, 4, 0, PpB, rend, texNum);
+				renderNumbers(0, 33.7, 8, PpB, rend, texNum);
 				break;
 			case 1: 
-				renderNumbers(1, 4, 0, PpB, rend, texNum);
+				renderNumbers(1, 33.7, 8, PpB, rend, texNum);
 				break;
 			case 2:
-				renderNumbers(2, 4, 0, PpB, rend, texNum);
+				renderNumbers(2, 33.7, 8, PpB, rend, texNum);
 				break;
 			case 3:
-				renderNumbers(3, 4, 0, PpB, rend, texNum);
+				renderNumbers(3, 33.7, 8, PpB, rend, texNum);
 				break;
 			case 4:
-				renderNumbers(4, 4, 0, PpB, rend, texNum);
+				renderNumbers(4, 33.7, 8, PpB, rend, texNum);
 				break;
 			case 5:
-				renderNumbers(5, 4, 0, PpB, rend, texNum);
+				renderNumbers(5, 33.7, 8, PpB, rend, texNum);
 				break;
 			case 6:
-				renderNumbers(6, 4, 0, PpB, rend, texNum);
+				renderNumbers(6, 33.7, 8, PpB, rend, texNum);
 				break;
 			case 7:
-				renderNumbers(7, 4, 0, PpB, rend, texNum);
+				renderNumbers(7, 33.7, 8, PpB, rend, texNum);
 				break;
 			case 8:
-				renderNumbers(8, 4, 0, PpB, rend, texNum);
+				renderNumbers(8, 33.7, 8, PpB, rend, texNum);
 				break;
 			case 9:
-				renderNumbers(9, 4, 0, PpB, rend, texNum);
+				renderNumbers(9, 33.7, 8, PpB, rend, texNum);
 				break;
 			default:
 				break;
@@ -814,34 +814,34 @@ int main(int argc, char *argv[])
 		switch (scoreAusgabe.Stelle_6)
 		{
 			case 0:
-				renderNumbers(0, 5, 0, PpB, rend, texNum);
+				renderNumbers(0, 34.7, 8, PpB, rend, texNum);
 				break;
 			case 1: 
-				renderNumbers(1, 5, 0, PpB, rend, texNum);
+				renderNumbers(1, 34.7, 8, PpB, rend, texNum);
 				break;
 			case 2:
-				renderNumbers(2, 5, 0, PpB, rend, texNum);
+				renderNumbers(2, 34.7, 8, PpB, rend, texNum);
 				break;
 			case 3:
-				renderNumbers(3, 5, 0, PpB, rend, texNum);
+				renderNumbers(3, 34.7, 8, PpB, rend, texNum);
 				break;
 			case 4:
-				renderNumbers(4, 5, 0, PpB, rend, texNum);
+				renderNumbers(4, 34.7, 8, PpB, rend, texNum);
 				break;
 			case 5:
-				renderNumbers(5, 5, 0, PpB, rend, texNum);
+				renderNumbers(5, 34.7, 8, PpB, rend, texNum);
 				break;
 			case 6:
-				renderNumbers(6, 5, 0, PpB, rend, texNum);
+				renderNumbers(6, 34.7, 8, PpB, rend, texNum);
 				break;
 			case 7:
-				renderNumbers(7, 5, 0, PpB, rend, texNum);
+				renderNumbers(7, 34.7, 8, PpB, rend, texNum);
 				break;
 			case 8:
-				renderNumbers(8, 5, 0, PpB, rend, texNum);
+				renderNumbers(8, 34.7, 8, PpB, rend, texNum);
 				break;
 			case 9:
-				renderNumbers(9, 5, 0, PpB, rend, texNum);
+				renderNumbers(9, 34.7, 8, PpB, rend, texNum);
 				break;
 			default:
 				break;
@@ -1071,14 +1071,14 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
-// renderNumbers(int zahl, int x_offset, int y_offset, PpB, rend, texNum[]);	
+// renderNumbers(int zahl, float x_offset, float y_offset, PpB, rend, texNum[]);	
 
-void renderNumbers(int zahl, int x_offset, int y_offset, float PpB, SDL_Renderer* rend, SDL_Texture* texNum[])
+void renderNumbers(int zahl, float x_offset, float y_offset, float PpB, SDL_Renderer* rend, SDL_Texture* texNum[])
 {
 	
 	SDL_Rect Rrender;
-	Rrender.x = (3*RESOLUTION_WIDTH/4) -4.5*PpB + x_offset*PpB;
-	Rrender.y = 8*PpB + y_offset*PpB;
+	Rrender.x = x_offset*PpB;
+	Rrender.y = y_offset*PpB;
 	Rrender.w = PpB;
 	Rrender.h = PpB;
 	
