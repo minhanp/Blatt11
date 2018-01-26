@@ -233,6 +233,7 @@ int* tetrisCheckLines (tetrisGame *game, int *pLinesNeeded, int maxlevel){
 	}
 	if (viableLines == 4) {
 			game->score += 1200 * (game->level + 1);
+			game->tetris++;
 	}
 	
 	return(pLinesNeeded);

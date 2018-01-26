@@ -204,3 +204,15 @@ Score: 0, reachedLevel: 0, while surviving for 2 seconds.
 Score: 0, reachedLevel: 0, while surviving for 3 seconds.
 Score: 0, reachedLevel: 0, while surviving for 4 seconds.
 Score: 40, reachedLevel: 0, while surviving for 14 seconds.
+Score: 0, reachedLevel: 0, while surviving for 84 seconds.
+Score: 0, reachedLevel: 0, while surviving for 1 seconds.
+Score: 0, reachedLevel: 0, while surviving for 0 seconds.
+Score: 3240, reachedLevel: 1, while surviving for 139 seconds.
+Score: 0, reachedLevel: 0, while surviving for 0 seconds.
+Score: 0, reachedLevel: 0, while surviving for 1 seconds.
+Score: 0, reachedLevel: 0, while surviving for 28 seconds.
+Score: 1600, reachedLevel: 2, while surviving for 159 seconds.
+Score: 80, reachedLevel: 0, while surviving for 15 seconds.
+Score: 0, reachedLevel: 0, while surviving for 2 seconds.
+Score: 1880, achievedTetris: 1, reachedLevel: 1, while surviving for 121 seconds.
+Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 1 seconds.

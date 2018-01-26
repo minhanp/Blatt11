@@ -44,6 +44,12 @@ typedef struct
 	int Stelle_2;
 	int Stelle_3;
 } StellenLines;
+
+typedef struct
+{
+	int Stelle_1;
+	int Stelle_2;
+} StellenTetris;
 	
 	
 int main(int argc, char *argv[])
@@ -56,6 +62,7 @@ int main(int argc, char *argv[])
 
 	Stellen scoreAusgabe;
 	StellenLines linesAusgabe;
+	StellenTetris tetrisAusgabe;
 	tetrisGame game;
 	tetrisGame* pointGame;
 	pointGame = &game;
@@ -65,6 +72,7 @@ int main(int argc, char *argv[])
 	game.score = 0;
 	game.level = STARTLEVEL;
 	game.lines = 0;
+	game.tetris = 0;
 	
 	block fall;
 	fall.type = 0;
@@ -264,6 +272,7 @@ int main(int argc, char *argv[])
 	int down = 0;
 	int oldlines = 0;
 	int oldlines2 = 0;
+	int oldtetris = 0;
 	int maxlevel = MAXLEVEL;
 	int oldscore = 0;
 	int timer = 0;
@@ -271,6 +280,7 @@ int main(int argc, char *argv[])
 	int Framecounter = 0;
 	int levelCheck = STARTLEVEL;
 	int z = game.level;
+	int tempTetris = 0;
 	
 	scoreAusgabe.Stelle_1 = 0;	
 	scoreAusgabe.Stelle_2 = 0;
@@ -282,6 +292,10 @@ int main(int argc, char *argv[])
 	linesAusgabe.Stelle_1 = 0;
 	linesAusgabe.Stelle_2 = 0;
 	linesAusgabe.Stelle_3 = 0;
+	
+	tetrisAusgabe.Stelle_1 = 0;
+	tetrisAusgabe.Stelle_2 = 0;
+	
 	
 	game.running = true;
    
@@ -848,6 +862,98 @@ int main(int argc, char *argv[])
 		}
 		/* Score Rendering End */
 		
+		/* Tetris Counter Rendering */
+		if (oldtetris != game.tetris)
+		{
+			tetrisAusgabe.Stelle_1 = 0;
+			tetrisAusgabe.Stelle_2 = 0;
+			tempTetris = game.tetris;
+		}
+		
+		if (tempTetris >= 10)
+		{
+			tetrisAusgabe.Stelle_1++;
+			tempTetris -= 10;
+		}
+		if (tempTetris >= 1)
+		{
+			tetrisAusgabe.Stelle_2++;
+			tempTetris -= 1;
+		}
+		
+		switch (tetrisAusgabe.Stelle_1)
+		{
+			case 0:
+				renderNumbers(0, 29.7, 12, PpB, rend, texNum);
+				break;
+			case 1: 
+				renderNumbers(1, 29.7, 12, PpB, rend, texNum);
+				break;
+			case 2:
+				renderNumbers(2, 29.7, 12, PpB, rend, texNum);
+				break;
+			case 3:
+				renderNumbers(3, 29.7, 12, PpB, rend, texNum);
+				break;
+			case 4:
+				renderNumbers(4, 29.7, 12, PpB, rend, texNum);
+				break;
+			case 5:
+				renderNumbers(5, 29.7, 12, PpB, rend, texNum);
+				break;
+			case 6:
+				renderNumbers(6, 29.7, 12, PpB, rend, texNum);
+				break;
+			case 7:
+				renderNumbers(7, 29.7, 12, PpB, rend, texNum);
+				break;
+			case 8:
+				renderNumbers(8, 29.7, 12, PpB, rend, texNum);
+				break;
+			case 9:
+				renderNumbers(9, 29.7, 12, PpB, rend, texNum);
+				break;
+			default:
+				break;
+		}
+		
+		switch (tetrisAusgabe.Stelle_2)
+		{
+			case 0:
+				renderNumbers(0, 30.7, 12, PpB, rend, texNum);
+				break;
+			case 1: 
+				renderNumbers(1, 30.7, 12, PpB, rend, texNum);
+				break;
+			case 2:
+				renderNumbers(2, 30.7, 12, PpB, rend, texNum);
+				break;
+			case 3:
+				renderNumbers(3, 30.7, 12, PpB, rend, texNum);
+				break;
+			case 4:
+				renderNumbers(4, 30.7, 12, PpB, rend, texNum);
+				break;
+			case 5:
+				renderNumbers(5, 30.7, 12, PpB, rend, texNum);
+				break;
+			case 6:
+				renderNumbers(6, 30.7, 12, PpB, rend, texNum);
+				break;
+			case 7:
+				renderNumbers(7, 30.7, 12, PpB, rend, texNum);
+				break;
+			case 8:
+				renderNumbers(8, 30.7, 12, PpB, rend, texNum);
+				break;
+			case 9:
+				renderNumbers(9, 30.7, 12, PpB, rend, texNum);
+				break;
+			default:
+				break;
+		}
+		/* Tetris Counter Rendering End */
+		
 		/* Next Block Rendering */
 		switch(game.next.type + 1)
 		{
@@ -994,6 +1100,9 @@ int main(int argc, char *argv[])
 			}
 		} /* Main Rendering End */
 		
+		
+		oldtetris = game.tetris;
+		
 		pLinesNeeded = tetrisCheckLines(pointGame, pLinesNeeded, maxlevel);
 		
 			
@@ -1044,7 +1153,7 @@ int main(int argc, char *argv[])
 	/* Score Documentation */
 	FILE* Scoreboard;
 	Scoreboard = fopen("scoreboard.txt", "a");
-	fprintf(Scoreboard, "Score: %d, reachedLevel: %d, while surviving for %d seconds.\n", game.score, game.level, timer);
+	fprintf(Scoreboard, "Score: %d, achievedTetris: %d, reachedLevel: %d, while surviving for %d seconds.\n", game.score, game.tetris, game.level, timer);
 	
 	/* Resourcen schliessen */
 	SDL_DestroyTexture(texBlockI);
@@ -1071,7 +1180,7 @@ int main(int argc, char *argv[])
 	return 0;
 }
 
-// renderNumbers(int zahl, float x_offset, float y_offset, PpB, rend, texNum[]);	
+// renderNumbers(int zahl, float x_offset, float y_offset, PpB, rend, texNum);
 
 void renderNumbers(int zahl, float x_offset, float y_offset, float PpB, SDL_Renderer* rend, SDL_Texture* texNum[])
 {
