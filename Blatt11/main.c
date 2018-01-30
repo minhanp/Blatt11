@@ -189,6 +189,7 @@ int main(int argc, char *argv[])
 	SDL_Surface* BlockZ = IMG_Load("textures/TexBlockZ.png");
 	SDL_Surface* Edges = IMG_Load("textures/Edges.png");
 	SDL_Surface* BackgroundImage = IMG_Load("textures/Background.jpg");
+    SDL_Surface* GameOver = IMG_Load("textures/GameOver.jpg");
 	
 	SDL_Texture* texNum[10];
 	
@@ -220,6 +221,7 @@ int main(int argc, char *argv[])
 	SDL_Texture* texBlockZ = SDL_CreateTextureFromSurface(rend, BlockZ);
 	SDL_Texture* texEdges = SDL_CreateTextureFromSurface(rend, Edges);
 	SDL_Texture* texBackgroundImage = SDL_CreateTextureFromSurface(rend, BackgroundImage);
+    SDL_Texture* textGameOver = SDL_CreateTextureFromSurface(rend, GameOver);
 	SDL_FreeSurface(BlockI);
 	SDL_FreeSurface(BlockL);
 	SDL_FreeSurface(BlockJ);
@@ -229,6 +231,9 @@ int main(int argc, char *argv[])
 	SDL_FreeSurface(BlockZ);
 	SDL_FreeSurface(Edges);
 	SDL_FreeSurface(BackgroundImage);
+    SDL_FreeSurface(GameOver);
+
+    
 
 	/* Fehlercode an die neuen Texturen anpassen */
 	if (!(texBlockI || texBlockL || texBlockJ || texBlockS || texBlockT || texBlockO || texBlockZ || texEdges || texBackgroundImage))
@@ -1127,12 +1132,12 @@ int main(int argc, char *argv[])
         if(game.level!=z){
             switch(game.level){
                 case 5: Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
-                        Mix_Music* BackgroundMusic = Mix_LoadMUS("music/SuperMarioLand.mp3");
+                        Mix_Music* BackgroundMusic = Mix_LoadMUS("music/OcarinaOfTime");
                         Mix_PlayMusic(BackgroundMusic, -1);
                         z=game.level;
                         break;
                 case 10: Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
-                        Mix_Music* BackgroundMusic2 = Mix_LoadMUS("music/BackgroundMusic.mp3");
+                        Mix_Music* BackgroundMusic2 = Mix_LoadMUS("music/SuperMarioLand.mp3");
                         Mix_PlayMusic(BackgroundMusic2, -1);
                         z=game.level;
                         break;
@@ -1149,7 +1154,36 @@ int main(int argc, char *argv[])
 
 
 	} /* Animation Ende */
+    
+    SDL_RenderCopy(rend, textGameOver, NULL, NULL);
+    SDL_Delay(10000);
+/*    SDL_Event event1;
+    while(1){
+        SDL_RenderCopy(rend, textGameOver, NULL, NULL);
+  while (SDL_PollEvent(&event1))
+    {
+        if (event1.type == SDL_QUIT)
+        {
+            game.running = false;
+        }
+        
+        else if (event1.type == SDL_KEYDOWN)
+        {
+            switch (event1.key.keysym.scancode)
+            {
+                case SDL_SCANCODE_ESCAPE:
+                    break;
+                default:
+                    break;
+            }
+        }
+        
 
+        }
+        break;
+    }
+ 
+    }*/
 	/* Score Documentation */
 	FILE* Scoreboard;
 	Scoreboard = fopen("scoreboard.txt", "a");
