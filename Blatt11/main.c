@@ -248,7 +248,7 @@ int main(int argc, char *argv[])
 
 	/* Music */
 	Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
-	Mix_Music* BackgroundMusic = Mix_LoadMUS("music/BackgroundMusic1.mp3");
+	Mix_Music* BackgroundMusic = Mix_LoadMUS("music/OcarinaOfTime.mp3");
 	Mix_PlayMusic(BackgroundMusic, -1);
 
 
@@ -1132,7 +1132,7 @@ int main(int argc, char *argv[])
         if(game.level!=z){
             switch(game.level){
                 case 5: Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
-                        Mix_Music* BackgroundMusic = Mix_LoadMUS("music/OcarinaOfTime");
+                        Mix_Music* BackgroundMusic = Mix_LoadMUS("music/BackgroundMusic1.mp3");
                         Mix_PlayMusic(BackgroundMusic, -1);
                         z=game.level;
                         break;
