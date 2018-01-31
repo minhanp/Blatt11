@@ -189,7 +189,12 @@ int main(int argc, char *argv[])
 	SDL_Surface* BlockZ = IMG_Load("textures/TexBlockZ.png");
 	SDL_Surface* Edges = IMG_Load("textures/Edges.png");
 	SDL_Surface* BackgroundImage = IMG_Load("textures/Background.jpg");
-    SDL_Surface* GameOver = IMG_Load("textures/GameOver.jpg");
+    SDL_Surface* GameOver = IMG_Load("textures/Backround_game_over_no_lights.png");
+    SDL_Surface* GameOverLight1 = IMG_Load("textures/Lights_game_over_Group_1.png");
+    SDL_Surface* GameOverLight2 = IMG_Load("textures/Lights_game_over_Group_2.png");
+    SDL_Surface* GameOverLight3 = IMG_Load("textures/Lights_game_over_Group_3.png");
+    SDL_Surface* GameOverLight4 = IMG_Load("textures/Lights_game_over_Group_4.png");
+    SDL_Surface* GameOverText = IMG_Load("textures/Game_Over_schriftzug.png");
 	
 	SDL_Texture* texNum[10];
 	
@@ -221,7 +226,12 @@ int main(int argc, char *argv[])
 	SDL_Texture* texBlockZ = SDL_CreateTextureFromSurface(rend, BlockZ);
 	SDL_Texture* texEdges = SDL_CreateTextureFromSurface(rend, Edges);
 	SDL_Texture* texBackgroundImage = SDL_CreateTextureFromSurface(rend, BackgroundImage);
-    SDL_Texture* textGameOver = SDL_CreateTextureFromSurface(rend, GameOver);
+    SDL_Texture* texGameOver = SDL_CreateTextureFromSurface(rend, GameOver);
+    SDL_Texture* texLightsGroup1 = SDL_CreateTextureFromSurface(rend, GameOverLight1);
+    SDL_Texture* texLightsGroup2 = SDL_CreateTextureFromSurface(rend, GameOverLight2);
+    SDL_Texture* texLightsGroup3 = SDL_CreateTextureFromSurface(rend, GameOverLight3);
+    SDL_Texture* texLightsGroup4 = SDL_CreateTextureFromSurface(rend, GameOverLight4);
+    SDL_Texture* texGameOverText = SDL_CreateTextureFromSurface(rend, GameOverText);
 	SDL_FreeSurface(BlockI);
 	SDL_FreeSurface(BlockL);
 	SDL_FreeSurface(BlockJ);
@@ -1182,11 +1192,67 @@ int main(int argc, char *argv[])
             }
         }
     
-    SDL_RenderCopy(rend, textGameOver, NULL, NULL);
+    SDL_RenderCopy(rend, texGameOver, NULL, NULL);
+    SDL_RenderCopy(rend, texLightsGroup1, NULL, NULL);
+    SDL_RenderCopy(rend, texLightsGroup2, NULL, NULL);
+    SDL_RenderCopy(rend, texLightsGroup3, NULL, NULL);
+    SDL_RenderCopy(rend, texLightsGroup4, NULL, NULL);
+	SDL_RenderPresent(rend);
+        SDL_Delay(1200);
+		
+	SDL_RenderCopy(rend, texGameOver, NULL, NULL);
+    SDL_RenderCopy(rend, texLightsGroup2, NULL, NULL);
+    SDL_RenderCopy(rend, texLightsGroup3, NULL, NULL);
+    SDL_RenderCopy(rend, texLightsGroup4, NULL, NULL);
+	SDL_RenderPresent(rend);
+        SDL_Delay(900);
+		
+	SDL_RenderCopy(rend, texGameOver, NULL, NULL);
+    SDL_RenderCopy(rend, texLightsGroup3, NULL, NULL);
+    SDL_RenderCopy(rend, texLightsGroup4, NULL, NULL);
+	SDL_RenderPresent(rend);
+        SDL_Delay(300);
+		
+	SDL_RenderCopy(rend, texGameOver, NULL, NULL);
+    SDL_RenderCopy(rend, texLightsGroup4, NULL, NULL);
+	SDL_RenderPresent(rend);
+        SDL_Delay(500);
+	
+	SDL_RenderCopy(rend, texGameOver, NULL, NULL);
     SDL_RenderPresent(rend);
-        SDL_Delay(1000/FPS);
-    }
-
+        SDL_Delay(600);
+		
+    game.running = false;
+	}
+	game.running = true;
+		while(game.running){
+			
+	 SDL_Event event2;
+        
+        while (SDL_PollEvent(&event2))
+        {
+            if (event2.type == SDL_QUIT)
+            {
+                game.running = false;
+            }
+            
+            else if (event2.type == SDL_KEYDOWN)
+            {
+                switch (event2.key.keysym.scancode)
+                {
+                    case SDL_SCANCODE_ESCAPE:
+                        game.running = false;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+		SDL_RenderCopy(rend, texGameOver, NULL, NULL);
+		SDL_RenderCopy(rend, texGameOverText, NULL, NULL);
+		SDL_RenderPresent(rend);
+		SDL_Delay(1000/FPS);
+	}
 
 	/* Score Documentation */
 	FILE* Scoreboard;
@@ -1203,6 +1269,13 @@ int main(int argc, char *argv[])
 	SDL_DestroyTexture(texBlockZ);
 	SDL_DestroyTexture(texEdges);
 	SDL_DestroyTexture(texBackgroundImage);
+	SDL_DestroyTexture(texLightsGroup1);
+	SDL_DestroyTexture(texLightsGroup2);
+	SDL_DestroyTexture(texLightsGroup3);
+	SDL_DestroyTexture(texLightsGroup4);
+	SDL_DestroyTexture(texGameOverText);
+	SDL_DestroyTexture(texGameOver);
+	
 	for (int i = 0; i < 10; i++)
 	{
 		SDL_DestroyTexture(texNum[i]);
