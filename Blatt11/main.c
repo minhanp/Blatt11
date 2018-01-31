@@ -1155,35 +1155,39 @@ int main(int argc, char *argv[])
 
 	} /* Animation Ende */
     
-    SDL_RenderCopy(rend, textGameOver, NULL, NULL);
-    SDL_Delay(10000);
-/*    SDL_Event event1;
-    while(1){
-        SDL_RenderCopy(rend, textGameOver, NULL, NULL);
-  while (SDL_PollEvent(&event1))
+    game.running = true;
+    
+    
+    while (game.running)
     {
-        if (event1.type == SDL_QUIT)
-        {
-            game.running = false;
-        }
+        SDL_Event event1;
         
-        else if (event1.type == SDL_KEYDOWN)
+        while (SDL_PollEvent(&event1))
         {
-            switch (event1.key.keysym.scancode)
+            if (event1.type == SDL_QUIT)
             {
-                case SDL_SCANCODE_ESCAPE:
-                    break;
-                default:
-                    break;
+                game.running = false;
+            }
+            
+            else if (event1.type == SDL_KEYDOWN)
+            {
+                switch (event1.key.keysym.scancode)
+                {
+                    case SDL_SCANCODE_ESCAPE:
+                        game.running = false;
+                        break;
+                    default:
+                        break;
+                }
             }
         }
-        
-
-        }
-        break;
+    
+    SDL_RenderCopy(rend, textGameOver, NULL, NULL);
+    SDL_RenderPresent(rend);
+        SDL_Delay(1000/FPS);
     }
- 
-    }*/
+
+
 	/* Score Documentation */
 	FILE* Scoreboard;
 	Scoreboard = fopen("scoreboard.txt", "a");
