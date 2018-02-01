@@ -192,7 +192,7 @@ int main(int argc, char *argv[])
 	SDL_Surface* BlockZ = IMG_Load("textures/TexBlockZ.png");
 	SDL_Surface* Edges = IMG_Load("textures/Edges.png");
 	SDL_Surface* GameOverNotTutor = IMG_Load("textures/GameOver.jpg");
-	SDL_Surface* PausingScreen = IMG_Load("textures/pausingScreen.jpg");
+	SDL_Surface* PausingScreen = IMG_Load("textures/pausingScreen.png");
 	SDL_Surface* BackgroundImage = IMG_Load("textures/Background.jpg");
     SDL_Surface* GameOver = IMG_Load("textures/Backround_game_over_no_lights.png");
     SDL_Surface* GameOverLight1 = IMG_Load("textures/Lights_game_over_Group_1.png");
