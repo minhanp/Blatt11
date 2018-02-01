@@ -67,6 +67,9 @@ int main(int argc, char *argv[])
 	tetrisGame* pointGame;
 	pointGame = &game;
 	
+	bool endIt = false;
+	
+	game.tutor = false;
 	game.rows = 20;
 	game.columns = 10;
 	game.score = 0;
@@ -188,6 +191,8 @@ int main(int argc, char *argv[])
 	SDL_Surface* BlockT = IMG_Load("textures/TexBlockT.png");
 	SDL_Surface* BlockZ = IMG_Load("textures/TexBlockZ.png");
 	SDL_Surface* Edges = IMG_Load("textures/Edges.png");
+	SDL_Surface* GameOverNotTutor = IMG_Load("textures/GameOver.jpg");
+	SDL_Surface* PausingScreen = IMG_Load("textures/pausingScreen.jpg");
 	SDL_Surface* BackgroundImage = IMG_Load("textures/Background.jpg");
     SDL_Surface* GameOver = IMG_Load("textures/Backround_game_over_no_lights.png");
     SDL_Surface* GameOverLight1 = IMG_Load("textures/Lights_game_over_Group_1.png");
@@ -225,6 +230,8 @@ int main(int argc, char *argv[])
 	SDL_Texture* texBlockT = SDL_CreateTextureFromSurface(rend, BlockT);
 	SDL_Texture* texBlockZ = SDL_CreateTextureFromSurface(rend, BlockZ);
 	SDL_Texture* texEdges = SDL_CreateTextureFromSurface(rend, Edges);
+	SDL_Texture* texPausingScreen = SDL_CreateTextureFromSurface(rend, PausingScreen);
+	SDL_Texture* texGameOverNotTutor = SDL_CreateTextureFromSurface(rend, GameOverNotTutor);
 	SDL_Texture* texBackgroundImage = SDL_CreateTextureFromSurface(rend, BackgroundImage);
     SDL_Texture* texGameOver = SDL_CreateTextureFromSurface(rend, GameOver);
     SDL_Texture* texLightsGroup1 = SDL_CreateTextureFromSurface(rend, GameOverLight1);
@@ -240,6 +247,8 @@ int main(int argc, char *argv[])
 	SDL_FreeSurface(BlockT);
 	SDL_FreeSurface(BlockZ);
 	SDL_FreeSurface(Edges);
+	SDL_FreeSurface(PausingScreen);
+	SDL_FreeSurface(GameOverNotTutor);
 	SDL_FreeSurface(BackgroundImage);
     SDL_FreeSurface(GameOver);
 
@@ -315,7 +324,7 @@ int main(int argc, char *argv[])
 	game.running = true;
    
 	/* Animation */
-	while (game.running)
+	while (game.running && !(endIt))
 	{
         
 		SDL_Event event;
@@ -324,6 +333,7 @@ int main(int argc, char *argv[])
 				if (event.type == SDL_QUIT)
 				{
 					game.running = false;
+					endIt = true;
 				}
 
 				else if (event.type == SDL_KEYDOWN)
@@ -332,6 +342,7 @@ int main(int argc, char *argv[])
 					{
 						case SDL_SCANCODE_ESCAPE:
 							game.running = false;
+							endIt = true;
 							break;
 						case SDL_SCANCODE_A:
 						case SDL_SCANCODE_LEFT:
@@ -350,6 +361,43 @@ int main(int argc, char *argv[])
 							break;
 						case SDL_SCANCODE_E:
 							tetrisTurnBlockRight(pointGame);
+							break;
+						case SDL_SCANCODE_P:
+							while (game.running)
+							{
+								SDL_Event eventPause;
+								while (SDL_PollEvent(&eventPause))
+								{	
+									if (eventPause.type == SDL_QUIT)
+									{
+										game.running = false;
+										endIt = true;
+									}
+									
+									else if (eventPause.type == SDL_KEYDOWN)
+									{
+									switch (eventPause.key.keysym.scancode)
+									{
+										case SDL_SCANCODE_ESCAPE:
+											game.running = false;
+											endIt = true;
+											break;
+										case SDL_SCANCODE_P:
+											game.running = false;
+											break;
+										default:
+											break;
+									}
+									}
+								}
+								
+								SDL_RenderCopy(rend, texPausingScreen, NULL, NULL);
+								SDL_RenderPresent(rend);
+								
+								SDL_Delay(1000/FPS);
+							}
+							
+							game.running = true;
 							break;
 						default:
 							break;
@@ -1167,8 +1215,7 @@ int main(int argc, char *argv[])
     
     game.running = true;
     
-    
-    while (game.running)
+    while (game.running && !(endIt))
     {
         SDL_Event event1;
         
@@ -1224,10 +1271,12 @@ int main(int argc, char *argv[])
 		
     game.running = false;
 	}
+	
 	game.running = true;
-		while(game.running){
+	
+	while(game.running && !(endIt) && game.tutor){
 			
-	 SDL_Event event2;
+	SDL_Event event2;
         
         while (SDL_PollEvent(&event2))
         {
@@ -1253,6 +1302,34 @@ int main(int argc, char *argv[])
 		SDL_RenderPresent(rend);
 		SDL_Delay(1000/FPS);
 	}
+	
+	while(!(game.tutor) && !(endIt))
+	{
+		SDL_Event eventnotTutor;
+			
+		while (SDL_PollEvent(&eventnotTutor))
+		{
+			if (eventnotTutor.type == SDL_QUIT)
+			{
+				endIt = true;
+			}
+			else if (eventnotTutor.type == SDL_KEYDOWN)
+			{
+				switch (eventnotTutor.key.keysym.scancode)
+				{
+					case SDL_SCANCODE_ESCAPE:
+						endIt = true;
+						break;
+					default:
+						break;
+				}
+			}
+		}
+		
+		SDL_RenderCopy(rend, texGameOverNotTutor, NULL, NULL);
+		SDL_RenderPresent(rend);
+		SDL_Delay(1000/FPS);
+	}
 
 	/* Score Documentation */
 	FILE* Scoreboard;
@@ -1268,6 +1345,7 @@ int main(int argc, char *argv[])
 	SDL_DestroyTexture(texBlockO);
 	SDL_DestroyTexture(texBlockZ);
 	SDL_DestroyTexture(texEdges);
+	SDL_DestroyTexture(texPausingScreen);
 	SDL_DestroyTexture(texBackgroundImage);
 	SDL_DestroyTexture(texLightsGroup1);
 	SDL_DestroyTexture(texLightsGroup2);
