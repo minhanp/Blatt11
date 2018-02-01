@@ -76,8 +76,8 @@ void tetrisGetNextBlock (tetrisGame *game){
 	}
 }
 
-//Turns a Block clockwise.
-void tetrisTurnBlockRight (tetrisGame *game){
+//Turns a Block counter-clockwise.
+void tetrisTurnBlockLeft (tetrisGame *game){
 	game->falling.orientation = (game->falling.orientation + 1) % 4;
 	bool viable = true;
 	for (int x = 0; x < game->columns; x++){
@@ -99,8 +99,8 @@ void tetrisTurnBlockRight (tetrisGame *game){
 	}
 }
 
-//Turns a Block counterclockwise.
-void tetrisTurnBlockLeft (tetrisGame *game){
+//Turns a Block clockwise.
+void tetrisTurnBlockRight (tetrisGame *game){
 	game->falling.orientation -= 1;
 	if(game->falling.orientation < 0){
 		game->falling.orientation = 3;

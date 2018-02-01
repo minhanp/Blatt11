@@ -273,3 +273,11 @@ Score: 8420, achievedTetris: 2, reachedLevel: 3, while surviving for 239 seconds
 Score: 70260, achievedTetris: 4, reachedLevel: 12, while surviving for 544 seconds.
 Score: 35260, achievedTetris: 4, reachedLevel: 9, while surviving for 516 seconds.
 Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 8 seconds.
+Score: 36560, achievedTetris: 7, reachedLevel: 6, while surviving for 711 seconds.
+Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 2 seconds.
+Score: 50320, achievedTetris: 6, reachedLevel: 9, while surviving for 436 seconds.
+Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 4 seconds.
+Score: 36620, achievedTetris: 2, reachedLevel: 8, while surviving for 458 seconds.
+Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 2 seconds.
+Score: 14040, achievedTetris: 2, reachedLevel: 5, while surviving for 272 seconds.
+Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 39 seconds.
