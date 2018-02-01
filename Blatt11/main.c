@@ -1274,6 +1274,10 @@ int main(int argc, char *argv[])
 	
 	game.running = true;
 	
+    Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048);
+    Mix_Music* BackgroundMusic2 = Mix_LoadMUS("music/GeileZeit.mp3");
+    Mix_PlayMusic(BackgroundMusic2, -1);
+    
 	while(game.running && !(endIt) && game.tutor){
 			
 	SDL_Event event2;
@@ -1305,6 +1309,7 @@ int main(int argc, char *argv[])
 		SDL_Delay(1000/FPS);
 	}
 	
+    
 	while(!(game.tutor) && !(endIt))
 	{
 		SDL_Event eventnotTutor;
