@@ -249,3 +249,9 @@ Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 3 seconds.
 Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 2 seconds.
 Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 2 seconds.
 Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 2 seconds.
+Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 2 seconds.
+Score: 100, achievedTetris: 0, reachedLevel: 0, while surviving for 24 seconds.
+Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 2 seconds.
+Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 2 seconds.
+Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 2 seconds.
+Score: 0, achievedTetris: 0, reachedLevel: 0, while surviving for 2 seconds.

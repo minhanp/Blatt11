@@ -1283,6 +1283,7 @@ int main(int argc, char *argv[])
             if (event2.type == SDL_QUIT)
             {
                 game.running = false;
+				game.tutor = false;
             }
             
             else if (event2.type == SDL_KEYDOWN)
@@ -1291,6 +1292,7 @@ int main(int argc, char *argv[])
                 {
                     case SDL_SCANCODE_ESCAPE:
                         game.running = false;
+						game.tutor = false;
                         break;
                     default:
                         break;
@@ -1327,6 +1329,259 @@ int main(int argc, char *argv[])
 		}
 		
 		SDL_RenderCopy(rend, texGameOverNotTutor, NULL, NULL);
+		
+		
+		scoreAusgabe.Stelle_1 = 0;
+		scoreAusgabe.Stelle_2 = 0;
+		scoreAusgabe.Stelle_3 = 0;
+		scoreAusgabe.Stelle_4 = 0;
+		scoreAusgabe.Stelle_5 = 0;
+		scoreAusgabe.Stelle_6 = 0;
+		int tempScore = game.score;
+		
+		while (tempScore >= 100000)
+		{
+			scoreAusgabe.Stelle_1++;
+			tempScore -= 100000;
+		}
+		while (tempScore >= 10000)
+		{
+			scoreAusgabe.Stelle_2++;
+			tempScore -= 10000;
+		}
+		while (tempScore >= 1000)
+		{
+			scoreAusgabe.Stelle_3++;
+			tempScore -= 1000;
+		}
+		while (tempScore >= 100)
+		{
+			scoreAusgabe.Stelle_4++;
+			tempScore -= 100;
+		}
+		while (tempScore >= 10)
+		{
+			scoreAusgabe.Stelle_5++;
+			tempScore -= 10;
+		}
+		while (tempScore >= 1)
+		{
+			scoreAusgabe.Stelle_6++;
+			tempScore -= 1;
+		}
+		
+		
+		switch (scoreAusgabe.Stelle_1)
+		{
+			case 0:
+				renderNumbers(0, 29.7, 14, PpB, rend, texNum);
+				break;
+			case 1: 
+				renderNumbers(1, 29.7, 14, PpB, rend, texNum);
+				break;
+			case 2:
+				renderNumbers(2, 29.7, 14, PpB, rend, texNum);
+				break;
+			case 3:
+				renderNumbers(3, 29.7, 14, PpB, rend, texNum);
+				break;
+			case 4:
+				renderNumbers(4, 29.7, 14, PpB, rend, texNum);
+				break;
+			case 5:
+				renderNumbers(5, 29.7, 14, PpB, rend, texNum);
+				break;
+			case 6:
+				renderNumbers(6, 29.7, 14, PpB, rend, texNum);
+				break;
+			case 7:
+				renderNumbers(7, 29.7, 14, PpB, rend, texNum);
+				break;
+			case 8:
+				renderNumbers(8, 29.7, 14, PpB, rend, texNum);
+				break;
+			case 9:
+				renderNumbers(9, 29.7, 14, PpB, rend, texNum);
+				break;
+			default:
+				break;
+		}
+		switch (scoreAusgabe.Stelle_2)
+		{
+			case 0:
+				renderNumbers(0, 30.7, 14, PpB, rend, texNum);
+				break;
+			case 1: 
+				renderNumbers(1, 30.7, 14, PpB, rend, texNum);
+				break;
+			case 2:
+				renderNumbers(2, 30.7, 14, PpB, rend, texNum);
+				break;
+			case 3:
+				renderNumbers(3, 30.7, 14, PpB, rend, texNum);
+				break;
+			case 4:
+				renderNumbers(4, 30.7, 14, PpB, rend, texNum);
+				break;
+			case 5:
+				renderNumbers(5, 30.7, 14, PpB, rend, texNum);
+				break;
+			case 6:
+				renderNumbers(6, 30.7, 14, PpB, rend, texNum);
+				break;
+			case 7:
+				renderNumbers(7, 30.7, 14, PpB, rend, texNum);
+				break;
+			case 8:
+				renderNumbers(8, 30.7, 14, PpB, rend, texNum);
+				break;
+			case 9:
+				renderNumbers(9, 30.7, 14, PpB, rend, texNum);
+				break;
+			default:
+				break;
+		}
+		switch (scoreAusgabe.Stelle_3)
+		{
+			case 0:
+				renderNumbers(0, 31.7, 14, PpB, rend, texNum);
+				break;
+			case 1: 
+				renderNumbers(1, 31.7, 14, PpB, rend, texNum);
+				break;
+			case 2:
+				renderNumbers(2, 31.7, 14, PpB, rend, texNum);
+				break;
+			case 3:
+				renderNumbers(3, 31.7, 14, PpB, rend, texNum);
+				break;
+			case 4:
+				renderNumbers(4, 31.7, 14, PpB, rend, texNum);
+				break;
+			case 5:
+				renderNumbers(5, 31.7, 14, PpB, rend, texNum);
+				break;
+			case 6:
+				renderNumbers(6, 31.7, 14, PpB, rend, texNum);
+				break;
+			case 7:
+				renderNumbers(7, 31.7, 14, PpB, rend, texNum);
+				break;
+			case 8:
+				renderNumbers(8, 31.7, 14, PpB, rend, texNum);
+				break;
+			case 9:
+				renderNumbers(9, 31.7, 14, PpB, rend, texNum);
+				break;
+			default:
+				break;
+		}
+		switch (scoreAusgabe.Stelle_4)
+		{
+			case 0:
+				renderNumbers(0, 32.7, 14, PpB, rend, texNum);
+				break;
+			case 1: 
+				renderNumbers(1, 32.7, 14, PpB, rend, texNum);
+				break;
+			case 2:
+				renderNumbers(2, 32.7, 14, PpB, rend, texNum);
+				break;
+			case 3:
+				renderNumbers(3, 32.7, 14, PpB, rend, texNum);
+				break;
+			case 4:
+				renderNumbers(4, 32.7, 14, PpB, rend, texNum);
+				break;
+			case 5:
+				renderNumbers(5, 32.7, 14, PpB, rend, texNum);
+				break;
+			case 6:
+				renderNumbers(6, 32.7, 14, PpB, rend, texNum);
+				break;
+			case 7:
+				renderNumbers(7, 32.7, 14, PpB, rend, texNum);
+				break;
+			case 8:
+				renderNumbers(8, 32.7, 14, PpB, rend, texNum);
+				break;
+			case 9:
+				renderNumbers(9, 32.7, 14, PpB, rend, texNum);
+				break;
+			default:
+				break;
+		}
+		switch (scoreAusgabe.Stelle_5)
+		{
+			case 0:
+				renderNumbers(0, 33.7, 14, PpB, rend, texNum);
+				break;
+			case 1: 
+				renderNumbers(1, 33.7, 14, PpB, rend, texNum);
+				break;
+			case 2:
+				renderNumbers(2, 33.7, 14, PpB, rend, texNum);
+				break;
+			case 3:
+				renderNumbers(3, 33.7, 14, PpB, rend, texNum);
+				break;
+			case 4:
+				renderNumbers(4, 33.7, 14, PpB, rend, texNum);
+				break;
+			case 5:
+				renderNumbers(5, 33.7, 14, PpB, rend, texNum);
+				break;
+			case 6:
+				renderNumbers(6, 33.7, 14, PpB, rend, texNum);
+				break;
+			case 7:
+				renderNumbers(7, 33.7, 14, PpB, rend, texNum);
+				break;
+			case 8:
+				renderNumbers(8, 33.7, 14, PpB, rend, texNum);
+				break;
+			case 9:
+				renderNumbers(9, 33.7, 14, PpB, rend, texNum);
+				break;
+			default:
+				break;
+		}
+		switch (scoreAusgabe.Stelle_6)
+		{
+			case 0:
+				renderNumbers(0, 34.7, 14, PpB, rend, texNum);
+				break;
+			case 1: 
+				renderNumbers(1, 34.7, 14, PpB, rend, texNum);
+				break;
+			case 2:
+				renderNumbers(2, 34.7, 14, PpB, rend, texNum);
+				break;
+			case 3:
+				renderNumbers(3, 34.7, 14, PpB, rend, texNum);
+				break;
+			case 4:
+				renderNumbers(4, 34.7, 14, PpB, rend, texNum);
+				break;
+			case 5:
+				renderNumbers(5, 34.7, 14, PpB, rend, texNum);
+				break;
+			case 6:
+				renderNumbers(6, 34.7, 14, PpB, rend, texNum);
+				break;
+			case 7:
+				renderNumbers(7, 34.7, 14, PpB, rend, texNum);
+				break;
+			case 8:
+				renderNumbers(8, 34.7, 14, PpB, rend, texNum);
+				break;
+			case 9:
+				renderNumbers(9, 34.7, 14, PpB, rend, texNum);
+				break;
+			default:
+				break;
+		}
+		
 		SDL_RenderPresent(rend);
 		SDL_Delay(1000/FPS);
 	}
