@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 	
 	bool endIt = false;
 	
-	game.tutor = false;
+	game.tutor = true;
 	game.rows = 20;
 	game.columns = 10;
 	game.score = 0;
